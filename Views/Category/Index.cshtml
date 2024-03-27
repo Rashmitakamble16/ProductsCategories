@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ASP.NET_MVC_Project.Models.Category>
+
+<h2>Categories</h2>
+
+<table class="table">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.CategoryId)</td>
+            <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Create New", "Create")

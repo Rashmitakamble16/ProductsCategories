@@ -1,0 +1,18 @@
+﻿@model ASP.NET_MVC_Project.Models.Category
+
+<h2>Create Category</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CategoryName, "Category Name")
+        @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CategoryName)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}
+
+@Html.ActionLink("Back to List", "Index")

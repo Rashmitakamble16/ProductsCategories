@@ -1,0 +1,25 @@
+﻿@model ASP.NET_MVC_Project.Models.Product
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<h2>@Model.ProductName</h2>
+
+<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Product ID</dt>
+        <dd>@Model.ProductId</dd>
+
+        <dt>Product Name</dt>
+        <dd>@Model.ProductName</dd>
+
+        <dt>Category</dt>
+        <dd>@Model.Category?.CategoryName</dd>
+    </dl>
+</div>
+
+<a href="@Url.Action("Index")" class="btn btn-default">Back to List</a>
+
